@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flowboard — Kanban</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <div class="eyebrow">WORKSPACE</div>
+      <h1>Flowboard</h1>
+    </div>
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21L16.5 16.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input id="searchInput" type="text" placeholder="Search tasks..." />
+    </div>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-meta">
+      <span id="progressLabel">0 of 0 tasks done</span>
+      <span id="progressPercent">0%</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </div>
+
+  <div class="board" id="board">
+
+    <div class="column" data-status="todo">
+      <div class="column-head">
+        <div class="column-title"><span class="dot"></span>To Do</div>
+        <span class="count" id="count-todo">0</span>
+      </div>
+      <div class="card-list" id="todo"></div>
+      <div class="add-row">
+        <button class="add-toggle" data-target="todo">+ Add task</button>
+        <div class="add-form" id="form-todo">
+          <textarea placeholder="Task title..."></textarea>
+          <div class="priority-picker">
+            <button class="priority-choice" data-priority="low">Low</button>
+            <button class="priority-choice active" data-priority="medium">Medium</button>
+            <button class="priority-choice" data-priority="high">High</button>
+          </div>
+          <div class="add-form-actions">
+            <button class="add-confirm">Add</button>
+            <button class="add-cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column" data-status="progress">
+      <div class="column-head">
+        <div class="column-title"><span class="dot"></span>In Progress</div>
+        <span class="count" id="count-progress">0</span>
+      </div>
+      <div class="card-list" id="progress"></div>
+      <div class="add-row">
+        <button class="add-toggle" data-target="progress">+ Add task</button>
+        <div class="add-form" id="form-progress">
+          <textarea placeholder="Task title..."></textarea>
+          <div class="priority-picker">
+            <button class="priority-choice" data-priority="low">Low</button>
+            <button class="priority-choice active" data-priority="medium">Medium</button>
+            <button class="priority-choice" data-priority="high">High</button>
+          </div>
+          <div class="add-form-actions">
+            <button class="add-confirm">Add</button>
+            <button class="add-cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column" data-status="done">
+      <div class="column-head">
+        <div class="column-title"><span class="dot"></span>Done</div>
+        <span class="count" id="count-done">0</span>
+      </div>
+      <div class="card-list" id="done"></div>
+      <div class="add-row">
+        <button class="add-toggle" data-target="done">+ Add task</button>
+        <div class="add-form" id="form-done">
+          <textarea placeholder="Task title..."></textarea>
+          <div class="priority-picker">
+            <button class="priority-choice" data-priority="low">Low</button>
+            <button class="priority-choice active" data-priority="medium">Medium</button>
+            <button class="priority-choice" data-priority="high">High</button>
+          </div>
+          <div class="add-form-actions">
+            <button class="add-confirm">Add</button>
+            <button class="add-cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
